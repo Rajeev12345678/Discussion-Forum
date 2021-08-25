@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::resource('discussions', 'App\Http\Controllers\DiscussionsController');

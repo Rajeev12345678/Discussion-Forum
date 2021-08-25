@@ -19,6 +19,12 @@
           View discussion
         </a>
         @endif
+       @if($notification->type === 'App\Notifications\ReplyMarkedAsBestReply')
+        Your reply to discussion <strong>{{$notification->data['discussion']['title']}}</strong> was marked as best reply.
+        <a href="{{route ('discussions.show', $notification->data['discussion']['slug'])}}" class="btn float-right btn-sm btn-info">
+          View discussion
+        </a>
+       @endif
       </li>
         @endforeach
       </ul>

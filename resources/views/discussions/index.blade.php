@@ -16,5 +16,5 @@
 </div>
 </div>
 @endforeach
-{{ $discussions->links()}}
+{{ $discussions->appends(['channel' => request()->query('channel')])->links('pagination::bootstrap-4')}}
 @endsection
